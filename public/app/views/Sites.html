@@ -1,0 +1,36 @@
+<h1>Qui va il contenuto di Sites</h1>
+
+
+<div class="container">
+  <div class="row boxDetail" ng-repeat="node in nodes" ui-sref="app.Sites.details({server:node})">
+    <div class="col-md-6">
+
+		<div class="media">
+		  <div class="media-left media-top">
+		  	<img class="media-object" src="img/SenseSite_ON.PNG" alt="Qlik Sense Site" width="50px">
+		  </div>
+
+		  <div class="media-body">
+		    <h3 class="mt-0">{{node}}</h3>
+
+
+		    	<dl class="dl-horizontal">
+		    			<dt>Build Version</dt>
+		    			<dd>{{nodesDetails[node].buildVersion}}</dd>
+
+		    			<dt>Database</dt>
+		    			<dd>{{nodesDetails[node].databaseProvider}}</dd>
+
+		    			<dt>Node Type</dt>
+		    			<dd>{{nodesDetails[node].nodeType}}</dd>
+
+		    			<dt>Shared Persistence</dt>
+		    			<dd>{{nodesDetails[node].sharedPersistence}}</dd>
+
+		    	</dl>
+		    	
+		  	</div>
+		</div>
+    </div>
+  </div>
+  </div>
