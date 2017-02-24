@@ -25,3 +25,7 @@ a {
 .nav-tabs {
 	background:white;
 }
+
+img.nav-link:hover {
+	border-bottom: thick solid #ff0000;
+}

@@ -64,36 +64,16 @@ angular.module('qsmig')
                       
     }])   
 
-    .controller('SitesDetailsController', ['$scope', 'QRSFactory','$state', '$stateParams',
-        function($scope,QRSFactory,$state,$stateParams) {
+    .controller('SitesDetailsController', ['$scope', 'QRSFactory','constantFactory', '$stateParams',
+        function($scope,QRSFactory,constantFactory,$stateParams) {
 
-            $scope.label = {
-                'user' : {
-                    'name' : 'userId',
-                    'id' : 'id',
-                    'User Directory' : 'userDirectory',
-                    'Name' : 'name',
-                    'Inactive' : 'inactive'
-                },
-                'task' : {
-                    'name' : 'name',
-                    'id' : 'id',
-                    'app' : 'app.name'
-                },
-                'app' : {
-                    'name' : 'name',
-                    'id' : 'id',
-                    'owner' : 'owner.name',
-                    'description' : 'description',
-                    'Size' : 'fileSize'
-                }
-            };
+            $scope.label = constantFactory.label;
+            $scope.SWITCH = "OFF";
 
             $scope.types={};
-            $scope.selectedType='user';
-            $scope.QSTypeObjects = ['user','task','app','stream'];
+            $scope.selectedType=constantFactory.QSTypeObjects[0];
+            $scope.QSTypeObjects = constantFactory.QSTypeObjects;
             var server = $stateParams.server;
-            console.log("Sono in SitesDetailsController richiamato per server "+server);
 
             $scope.setObjectType = function(type) {
                 console.log("Imposto nuovo type "+type);
