@@ -46,12 +46,16 @@ angular.module('qsmig')
                     console.log("getDetails for Server "+s);
 
                     QRSFactory.getType(s, '4242').query({'type':'about'},
-                        function(response) {      
-                            console.log(response);                
+                        function(response) {    
+                            response['status'] = 'OK';  
+                            console.log(response);
+
                             $scope.nodesDetails[s] = response;
                         },
                         function(response) {
-                            console.log("Qui ERRORE!");
+                            response['status'] = 'KO'; 
+                            console.log(response);
+                            $scope.nodesDetails[s] = response;
                         }
                     );
                 })
