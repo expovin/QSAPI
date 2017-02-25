@@ -2,7 +2,7 @@
 [Tt]humbs.db
 *.DS_Store
 ._.DS_Store
-
+*.log
 
 #Remove Dependency folder
 node_modules
